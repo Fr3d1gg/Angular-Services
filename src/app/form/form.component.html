@@ -1,0 +1,29 @@
+<div class="row justify-content-center mt-4">
+  <div class="col-md-8">
+    <form class="row g-2" #f="ngForm" (ngSubmit)="f.form.valid && add()">
+      <div class="col-auto">
+        <select class="form-select bg-success" (change)="operationSelected($event)"
+        [ngClass]="{'bg-danger':typeOPeration==='egresoOperacion','bg-success':typeOPeration==='ingresoOperacion'}">
+          <option value="ingresoOperacion" selected>+</option>
+          <option value="egresoOperacion">-</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control border-success" placeholder="Description" required [(ngModel)]="description" name="description"
+        [ngClass]="{'border-danger':typeOPeration==='egresoOperacion','border-success':typeOPeration==='ingresoOperacion'}"/>
+      </div>
+      <div class="col-auto">
+        <input type="number" class="form-control border-success" placeholder="Value" required [(ngModel)]="money" name="money"
+        [ngClass]="{'border-danger':typeOPeration==='egresoOperacion','border-success':typeOPeration==='ingresoOperacion'}"/>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-success"
+        [ngClass]="{'btn-danger':typeOPeration==='egresoOperacion','btn-success':typeOPeration==='ingresoOperacion'}">
+          <i class="bi bi-check-circle"
+          [ngClass]="{'bi-x-circle':typeOPeration==='egresoOperacion','bi-check-circle':typeOPeration==='ingresoOperacion'}"></i> <!-- Bootstrap Icon -->
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+

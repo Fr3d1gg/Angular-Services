@@ -1,0 +1,13 @@
+<h2 class="text-center text-primary">Ingresos</h2>
+        <ul class="list-group mt-3">
+          @for(element of revenueComponent;track element){
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="flex-grow-1">{{element.description}}</span>
+              <span class="text-success mx-3">{{element.money|currency:'USD'}}</span>
+              <button class="btn btn-sm btn-danger" (click)="deleteRevenue(element)">
+                <i class="bi bi-x-circle"></i> <!-- Bootstrap Icon -->
+              </button>
+            </li>
+          }
+        </ul>
+

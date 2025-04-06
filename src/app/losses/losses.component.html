@@ -1,0 +1,15 @@
+<h2 class="text-center text-danger">Egresos</h2>
+        <ul class="list-group mt-3">
+          @for(element of lossesComponent;track element){
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="flex-grow-1">{{element.description}}</span>
+              <span class="d-flex align-items-center mx-3">
+                <span class="text-danger">{{element.money|currency:'USD'}}</span>
+                <span class="badge bg-success ms-2">{{getPercent(element)|percent:'1.1-1'}}</span>
+              </span>
+              <button class="btn btn-sm btn-danger" (click)="deleteLosses(element)">
+                <i class="bi bi-x-circle"></i> <!-- Bootstrap Icon -->
+              </button>
+          }
+        </ul>
+

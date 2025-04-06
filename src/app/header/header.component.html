@@ -1,0 +1,19 @@
+<div class="row justify-content-center">
+  <div class="p-4 rounded border border-primary text-center">
+    <h4 class="mb-3">Presupuesto Disponible:</h4>
+    <div class="display-3 fw-bold text-warning">{{total|currency:'USD'}}</div>
+    <div class="row mt-4 justify-content-center">
+      <div class="col-md-5 text-center">
+        <div class="text-uppercase">Revenues</div>
+        <div class="text-success h5">{{totalRevenue|currency:'USD'}}</div>
+      </div>
+      <div class="col-md-5 text-center">
+        <div class="text-uppercase">Losses</div>
+        <div class="text-danger h5">
+          {{totalLosses|currency:'USD'}}
+          <span class="badge bg-success ms-2">{{percent|percent:'1.1-1'}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
